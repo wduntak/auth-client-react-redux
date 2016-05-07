@@ -24,6 +24,17 @@ export function signinUser({email, password}) {
 	}
 }
 
+export function signupUser({email, password}) {
+	return function(dispatch) {
+		// Submit email/password to the server
+		axios.post(`${ROOT_URL}/signup`, { email, password })
+			.then(response => {
+			})
+			.catch(() => {
+			})
+	}
+}
+
 export function authError(error) {
 	return {
 		type: AUTH_ERROR,
